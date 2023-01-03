@@ -186,7 +186,6 @@ public class MainActivity2 extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
@@ -202,15 +201,18 @@ public class MainActivity2 extends AppCompatActivity {
                     .apply();
             // 建立提示訊息
             Toast.makeText(this, "記錄已刪除", Toast.LENGTH_SHORT).show();
-        } else if (id == R.id.give_up) {
+        }
+        else if (id == R.id.give_up) {
             hint.setText("放棄遊戲！答案是「"+ ranNum +"」");
             submit.setEnabled(false);
             times.setText("猜測次數：0");
-        } else if (id == R.id.restart) {
+        }
+        else if (id == R.id.restart) {
             Intent intent = getIntent();
             finish();
             startActivity(intent);
-        } else if (id == R.id.exit) {
+        }
+        else if (id == R.id.exit) {
             Intent intent = new Intent(MainActivity2.this, MainActivity1.class);
             startActivity(intent);
             finish();
